@@ -17,12 +17,12 @@ onload = function(){
     sliderB.addEventListener("input", update );
     sliderC.addEventListener("input", update );
 
-    //window.addEventListener("deviceorientation", function(e){
-    //    alp = ( e.alpha || 0);
-    //    bet = ( e.beta  || 0);
-    //    gam = ( e.gamma || 0);
-    //    update();
-    //});
+    window.addEventListener("deviceorientation", function(e){
+        alp = ( e.alpha || 0);
+        bet = ( e.beta  || 0);
+        gam = ( e.gamma || 0);
+        update();
+    });
 
     let canvas1 = document.getElementById('canvas');
     let view1 = new SceneView( canvas1 );
@@ -38,13 +38,13 @@ onload = function(){
 
     function update(){
 
-        view1.alp = sliderA.value;
-        view1.bet = sliderB.value;
-        view1.gam = sliderC.value;
+        //view1.alp = sliderA.value;
+        //view1.bet = sliderB.value;
+        //view1.gam = sliderC.value;
 
-        //view1.alp = alp;
-        //view1.bet = bet;
-        //view1.gam = gam;
+        view1.alp = alp;
+        view1.bet = bet;
+        view1.gam = gam;
 
         view1.update();
 
